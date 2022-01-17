@@ -2,11 +2,6 @@ name: CI
 on:
   push:
     branches: [main]
-    paths:
-      - "aplications/**" # ACTIONS RUN ONLY IF CHANGES ARE MADE INSIDE this FOLDER
-defaults:
-  run:
-    working-directory: packages/auth
 jobs:
   build:
     runs-on: ubuntu-18.04
