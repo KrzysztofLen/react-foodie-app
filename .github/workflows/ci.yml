@@ -1,0 +1,17 @@
+name: CI
+on:
+  push:
+    branches: [main]
+    paths:
+      - "aplications/**" # ACTIONS RUN ONLY IF CHANGES ARE MADE INSIDE this FOLDER
+defaults:
+  run:
+    working-directory: packages/auth
+jobs:
+  build:
+    runs-on: ubuntu-18.04
+
+    steps:
+      - uses: actions/checkout@v2
+      - run: npm install
+      - run: npm run build
