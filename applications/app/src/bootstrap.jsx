@@ -1,7 +1,5 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import App from './App';
 
-ReactDOM.render(
-    <h1>Welcome in Foodie App</h1>,
-    document.querySelector('#root'),
-);
+ReactDOM.render(<App />, document.querySelector('#root'));
