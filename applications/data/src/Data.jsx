@@ -1,7 +1,5 @@
 import React, { useState, useEffect } from 'react';
 import { DataView } from 'primereact/dataview';
-import { Button } from 'primereact/button';
-import { Rating } from 'primereact/rating';
 import { MOCK_DATA } from './data/products';
 
 import Header from './components/Header';
@@ -28,7 +26,7 @@ const Data = () => {
     };
 
     return (
-        <div className="dataview-demo">
+        <div className="data">
             <div className="card">
                 <DataView
                     value={products}

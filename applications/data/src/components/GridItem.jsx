@@ -2,22 +2,22 @@ import React from 'react';
 
 import { Rating } from 'primereact/rating';
 import { Button } from 'primereact/button';
+import { Tag } from 'primereact/tag';
 
 const GridItem = ({ data }) => {
     return (
         <div className="col-12 md:col-4">
             <div className="product-grid-item card">
                 <div className="product-grid-item-top">
-                    <div>
-                        <i className="pi pi-tag product-category-icon"></i>
-                        <span className="product-category">
-                            {data.category}
-                        </span>
-                    </div>
-                    <span
-                        className={`product-badge status-${data.inventoryStatus.toLowerCase()}`}>
-                        {data.inventoryStatus}
-                    </span>
+                    <Tag className="mr-2" severity="success">
+                        {data.category}
+                    </Tag>
+
+                    <Button
+                        icon="pi pi-heart"
+                        className="p-button-rounded p-button-help p-button-outlined"
+                        onClick={() => console.log('click')}
+                    />
                 </div>
                 <div className="product-grid-item-content">
                     <img
@@ -32,17 +32,24 @@ const GridItem = ({ data }) => {
                     <div className="product-description">
                         {data.description}
                     </div>
-                    <Rating
-                        value={data.rating}
-                        readOnly
-                        cancel={false}></Rating>
+                    <div className="product-rating">
+                        <Rating
+                            value={data.rating}
+                            readOnly
+                            cancel={false}></Rating>
+                        <span className="product-reviews">
+                            <span className="product-reviews-number">1821</span>{' '}
+                            <span>reviews</span>
+                        </span>
+                    </div>
                 </div>
-
-                <div className="product-price">${data.price}</div>
-                <Button
-                    icon="pi pi-shopping-cart"
-                    label="Add to Cart"
-                    disabled={data.inventoryStatus === 'OUTOFSTOCK'}></Button>
+                <div className="product-cartButton">
+                    <Button
+                        icon="pi pi-shopping-cart"
+                        label="Add to Cart"
+                        disabled={data.inventoryStatus === 'OUTOFSTOCK'}
+                    />
+                </div>
             </div>
         </div>
     );

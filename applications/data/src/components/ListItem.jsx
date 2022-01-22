@@ -2,6 +2,7 @@ import React from 'react';
 
 import { Rating } from 'primereact/rating';
 import { Button } from 'primereact/button';
+import { Tag } from 'primereact/tag';
 
 const ListItem = ({ data }) => {
     return (
@@ -24,21 +25,26 @@ const ListItem = ({ data }) => {
                         value={data.rating}
                         readOnly
                         cancel={false}></Rating>
-                    <i className="pi pi-tag product-category-icon"></i>
-                    <span className="product-category">{data.category}</span>
+                    <Tag className="mr-2" severity="success">
+                        {data.category}
+                    </Tag>
                 </div>
                 <div className="product-list-action">
-                    <span className="product-price">${data.price}</span>
+                    <Button
+                        icon="pi pi-heart"
+                        className="p-button-rounded p-button-help p-button-outlined"
+                        onClick={() => console.log('click')}
+                    />
+                    <span className="product-reviews">
+                        <span className="product-reviews-number">1821</span>{' '}
+                        <span>reviews</span>
+                    </span>
                     <Button
                         icon="pi pi-shopping-cart"
                         label="Add to Cart"
                         disabled={
                             data.inventoryStatus === 'OUTOFSTOCK'
                         }></Button>
-                    <span
-                        className={`product-badge status-${data.inventoryStatus.toLowerCase()}`}>
-                        {data.inventoryStatus}
-                    </span>
                 </div>
             </div>
         </div>
