@@ -5,6 +5,7 @@ import { Rating } from 'primereact/rating';
 import { Tag } from 'primereact/tag';
 import { Button } from 'primereact/button';
 import { Panel } from 'primereact/panel';
+import { Chip } from 'primereact/chip';
 
 import { MOCK_DATA } from './data/products';
 
@@ -17,32 +18,38 @@ const Cookbook = () => {
         setProducts(MOCK_DATA.data);
     }, []);
 
-    const reviewTemplate = (rowData) => {
-        return (
-            <span
-                className={`product-badge status-${
-                    rowData.inventoryStatus
-                        ? rowData.inventoryStatus.toLowerCase()
-                        : ''
-                }`}>
-                <span className="product-reviews-number">1821</span>
-            </span>
-        );
+    const reviewTemplate = (item) => {
+        return <Chip label={item.reviews} />;
     };
 
-    const ratingTemplate = (rowData) => {
-        return <Rating value={rowData.rating} readOnly cancel={false} />;
+    const ratingTemplate = (item) => {
+        return <Rating value={item.rating} readOnly cancel={false} />;
     };
 
-    const categoryTemplate = (rowData) => {
+    const categoryTemplate = (item) => {
+        const category_type = {
+            Vegetarian: 'success',
+            Vegan: 'primary',
+            ['Low Carb']: 'info',
+            ['Low Fat']: 'danger',
+            ['Low Calorie']: 'warning',
+        }[item.category];
         return (
-            <Tag className="mr-2" severity="success">
-                {rowData.category}
+            <Tag className="mr-2" severity={`${category_type}`}>
+                {item.category}
             </Tag>
         );
     };
 
-    const actionsTemplate = (rowData) => {
+    const onRemoveItem = (item) => {
+        const newProductList = products.filter(
+            (product) => product.id !== item.id,
+        );
+
+        setProducts(newProductList);
+    };
+
+    const actionsTemplate = (item) => {
         return (
             <div className="cookbook-actions">
                 <Button
@@ -54,9 +61,14 @@ const Cookbook = () => {
                     label="Remove"
                     className="p-button-outlined p-button-danger p-button-sm"
                     icon="pi pi-trash"
+                    onClick={() => onRemoveItem(item)}
                 />
             </div>
         );
+    };
+
+    const nameTemplate = (item) => {
+        return <h4>{item.name}</h4>;
     };
 
     return (
@@ -75,8 +87,8 @@ const Cookbook = () => {
             </Panel>
             <div className="card">
                 <DataTable value={products} responsiveLayout="scroll">
-                    <Column field="code" header="Code" />
-                    <Column field="name" header="Name" />
+                    <Column field="id" header="ID" />
+                    <Column field="name" header="Name" body={nameTemplate} />
                     <Column
                         field="category"
                         header="Category"

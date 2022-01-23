@@ -5,6 +5,14 @@ import { Button } from 'primereact/button';
 import { Tag } from 'primereact/tag';
 
 const ListItem = ({ data }) => {
+    const category_type = {
+        Vegetarian: 'success',
+        Vegan: 'primary',
+        ['Low Carb']: 'info',
+        ['Low Fat']: 'danger',
+        ['Low Calorie']: 'warning',
+    }[data.category];
+
     return (
         <div className="col-12">
             <div className="product-list-item">
@@ -25,7 +33,7 @@ const ListItem = ({ data }) => {
                         value={data.rating}
                         readOnly
                         cancel={false}></Rating>
-                    <Tag className="mr-2" severity="success">
+                    <Tag className="mr-2" severity={`${category_type}`}>
                         {data.category}
                     </Tag>
                 </div>
@@ -36,15 +44,14 @@ const ListItem = ({ data }) => {
                         onClick={() => console.log('click')}
                     />
                     <span className="product-reviews">
-                        <span className="product-reviews-number">1821</span>{' '}
+                        <span className="product-reviews-number">
+                            {data.reviews}
+                        </span>{' '}
                         <span>reviews</span>
                     </span>
                     <Button
                         icon="pi pi-shopping-cart"
-                        label="Add to Cart"
-                        disabled={
-                            data.inventoryStatus === 'OUTOFSTOCK'
-                        }></Button>
+                        label="Add to Cart"></Button>
                 </div>
             </div>
         </div>

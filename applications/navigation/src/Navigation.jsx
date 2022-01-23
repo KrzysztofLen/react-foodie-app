@@ -5,7 +5,7 @@ import { Menubar } from 'primereact/menubar';
 import Search from './components/Search';
 import Logo from './components/Logo';
 
-export default () => {
+const Navigation = () => {
     const items = [
         {
             label: 'List',
@@ -41,7 +41,7 @@ export default () => {
             icon: 'pi pi-fw pi-shopping-cart',
         },
     ];
-
+    // throw Error('error');
     return (
         <div>
             <div className="card">
@@ -50,3 +50,5 @@ export default () => {
         </div>
     );
 };
+
+export default Navigation;

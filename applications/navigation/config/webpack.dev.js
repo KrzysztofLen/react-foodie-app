@@ -1,8 +1,8 @@
 const { merge } = require('webpack-merge');
-const HtmlWebpackPlugin = require('html-webpack-plugin');
 const ModuleFederationPlugin = require('webpack/lib/container/ModuleFederationPlugin');
 const commonConfig = require('./webpack.common');
-const packageJson = require('../package.json');
+
+const deps = require('../package.json').dependencies;
 
 const PORT = 8081;
 
@@ -17,6 +17,26 @@ const devConfig = {
             index: 'index.html',
         },
     },
+    plugins: [
+        new ModuleFederationPlugin({
+            name: 'navigation',
+            filename: 'remoteEntry.js',
+            exposes: {
+                './NavigationApp': './src/Navigation',
+            },
+            shared: {
+                ...deps,
+                react: {
+                    singleton: true,
+                    requiredVersion: deps.react,
+                },
+                'react-dom': {
+                    singleton: true,
+                    requiredVersion: deps['react-dom'],
+                },
+            },
+        }),
+    ],
 };
 
 module.exports = merge(commonConfig, devConfig);

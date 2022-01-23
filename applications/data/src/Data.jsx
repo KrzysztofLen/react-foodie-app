@@ -6,7 +6,7 @@ import Header from './components/Header';
 import GridItem from './components/GridItem';
 import ListItem from './components/ListItem';
 
-import './Data.css';
+import './style.css';
 
 const Data = () => {
     const [products, setProducts] = useState(null);

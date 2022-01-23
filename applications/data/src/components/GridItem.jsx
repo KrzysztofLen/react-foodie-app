@@ -5,11 +5,19 @@ import { Button } from 'primereact/button';
 import { Tag } from 'primereact/tag';
 
 const GridItem = ({ data }) => {
+    const category_type = {
+        Vegetarian: 'success',
+        Vegan: 'primary',
+        ['Low Carb']: 'info',
+        ['Low Fat']: 'danger',
+        ['Low Calorie']: 'warning',
+    }[data.category];
+
     return (
         <div className="col-12 md:col-4">
             <div className="product-grid-item card">
                 <div className="product-grid-item-top">
-                    <Tag className="mr-2" severity="success">
+                    <Tag className="mr-2" severity={`${category_type}`}>
                         {data.category}
                     </Tag>
 
@@ -38,7 +46,9 @@ const GridItem = ({ data }) => {
                             readOnly
                             cancel={false}></Rating>
                         <span className="product-reviews">
-                            <span className="product-reviews-number">1821</span>{' '}
+                            <span className="product-reviews-number">
+                                {data.reviews}
+                            </span>{' '}
                             <span>reviews</span>
                         </span>
                     </div>
