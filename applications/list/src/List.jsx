@@ -8,7 +8,7 @@ import ListItem from './components/ListItem';
 
 import './style.css';
 
-const Data = () => {
+const List = () => {
     const [products, setProducts] = useState(null);
     const [layout, setLayout] = useState('grid');
 
@@ -41,4 +41,4 @@ const Data = () => {
     );
 };
 
-export default Data;
+export default List;

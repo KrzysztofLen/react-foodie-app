@@ -5,7 +5,7 @@ const commonConfig = require('./webpack.common');
 
 const deps = require('../package.json').dependencies;
 
-const PORT = 8080;
+const PORT = 8082;
 
 const devConfig = {
     mode: 'development',
@@ -18,10 +18,10 @@ const devConfig = {
     },
     plugins: [
         new ModuleFederationPlugin({
-            name: 'app',
-            remotes: {
-                navigation: 'navigation@http://localhost:8081/remoteEntry.js',
-                list: 'list@http://localhost:8082/remoteEntry.js',
+            name: 'list',
+            filename: 'remoteEntry.js',
+            exposes: {
+                './ListApp': './src/List',
             },
             shared: {
                 ...deps,

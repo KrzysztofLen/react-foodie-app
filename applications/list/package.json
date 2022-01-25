@@ -1,5 +1,5 @@
 {
-  "name": "data",
+  "name": "list",
   "version": "1.0.0",
   "scripts": {
     "start": "webpack serve --config config/webpack.dev.js",
