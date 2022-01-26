@@ -9,15 +9,12 @@ import { routes } from './routes/routes';
 
 import FallbackNavigation from './components/FallbackNavigation';
 import FallbackList from './components/FallbackList';
+import FallbackCookbook from './components/FallbackCookbook';
 
 const NavigationLazy = React.lazy(() => import('navigation/NavigationApp'));
 const ListLazy = React.lazy(() => import('list/ListApp'));
+const CookbookLazy = React.lazy(() => import('cookbook/CookbookApp'));
 
-const CookbookRoute = () => (
-    <React.Suspense fallback={<div />}>
-        <h1>THIS IS COOKBOOK</h1>
-    </React.Suspense>
-);
 const ShoppingListRoute = () => (
     <React.Suspense fallback={<div />}>
         <h1>THIS IS SHOPPING LIST</h1>
@@ -45,7 +42,12 @@ export default () => {
                     </ErrorBoundary>
                 </Route>
                 <Route path="/cookbook">
-                    <CookbookRoute />
+                    <ErrorBoundary
+                        error="Loading fallback cookbook"
+                        loading="Loading cookbook"
+                        fallback={<FallbackCookbook />}>
+                        <CookbookLazy />
+                    </ErrorBoundary>
                 </Route>
                 <Route path="/shopping-list">
                     <ShoppingListRoute />

@@ -33,6 +33,10 @@ const devConfig = {
                     singleton: true,
                     requiredVersion: deps['react-dom'],
                 },
+                primereact: {
+                    singleton: true,
+                    requiredVersion: deps.primereact,
+                },
             },
         }),
     ],
