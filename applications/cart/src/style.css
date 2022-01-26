@@ -1,0 +1,22 @@
+.statistic-container {
+    display: flex;
+    justify-content: space-between;
+    margin: 20px 0;
+}
+
+.statistic-item {
+    flex-direction: column;
+    display: flex;
+    align-items: center;
+}
+
+.statistic-label {
+    font-weight: 200;
+    margin: 0;
+    font-family: sans-serif;
+}
+
+.checkout {
+    display: flex;
+    justify-content: end;
+}
