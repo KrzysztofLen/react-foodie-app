@@ -1,7 +1,11 @@
 .statistic-container {
     display: flex;
     justify-content: space-between;
-    margin: 20px 0;
+    margin: 20px 200px;
+}
+
+.cart .p-datatable.p-datatable-gridlines .p-datatable-tbody > tr > td {
+    text-align: center;
 }
 
 .statistic-item {

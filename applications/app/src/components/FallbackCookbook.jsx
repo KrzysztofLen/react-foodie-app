@@ -1,6 +1,11 @@
 import React from 'react';
 
-const items = ['Bamboo Watch', 'Black Watch', 'Blue Band', 'Blue T-Shirt'];
+const items = [
+    'Vegetable shashlik',
+    'Tuna salad',
+    'Cauliflower pizza',
+    'Halloumi fries',
+];
 const FallbackCookbook = () => (
     <>
         <p>
@@ -20,7 +25,7 @@ const FallbackCookbook = () => (
             </thead>
             <tbody>
                 {items.map((item) => (
-                    <tr>
+                    <tr key={item}>
                         <td>{item}</td>
 
                         <td>

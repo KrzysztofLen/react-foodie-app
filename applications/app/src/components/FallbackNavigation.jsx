@@ -16,16 +16,16 @@ const FallbackNavigation = () => (
                 />
             </li>
             <li>
-                <a href="#">List</a>
+                <a href="/">List</a>
             </li>
             <li>
                 <a href="#">Recipe</a>
             </li>
             <li>
-                <a href="#">Cookbook</a>
+                <a href="/cookbook">Cookbook</a>
             </li>
             <li>
-                <a href="#">Shopping list</a>
+                <a href="/shopping-list">Shopping list</a>
             </li>
         </ul>
     </nav>

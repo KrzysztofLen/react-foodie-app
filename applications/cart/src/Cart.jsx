@@ -3,10 +3,12 @@ import { DataTable } from 'primereact/datatable';
 import { Column } from 'primereact/column';
 import { Button } from 'primereact/button';
 import { Divider } from 'primereact/divider';
-import { Knob } from 'primereact/knob';
+import { Tag } from 'primereact/tag';
+
+import Statistics from './components/Statistics';
+import { ErrorBoundary } from './ErrorBoundary';
 
 import { MOCK_DATA } from './data/products';
-import { CATEGORY } from '../../list/src/data/products';
 
 import './style.css';
 
@@ -17,57 +19,26 @@ const Cart = () => {
         setProducts(MOCK_DATA.data);
     }, []);
 
+    const categoryTemplate = (item) => {
+        const category_type = {
+            Vegetarian: 'success',
+            Vegan: 'primary',
+            ['Low Carb']: 'info',
+            ['Low Fat']: 'danger',
+            ['Low Calorie']: 'warning',
+        }[item.category];
+        return (
+            <Tag className="mr-2" severity={`${category_type}`}>
+                {item.category}
+            </Tag>
+        );
+    };
+    // throw new Error('Cart crashed!');
     return (
-        <div>
-            <div className="statistic-container">
-                <div className="statistic-item">
-                    <Knob
-                        value={10}
-                        readOnly
-                        valueColor={'MediumTurquoise'}
-                        rangeColor={'SlateGray'}
-                    />
-                    <h4 className="statistic-label">{CATEGORY.Vegetarian}</h4>
-                </div>
-                <div className="statistic-item">
-                    <Knob
-                        value={50}
-                        readOnly
-                        valueColor={'#eec137'}
-                        rangeColor={'SlateGray'}
-                    />
-                    <h4 className="statistic-label">{CATEGORY['Low Carb']}</h4>
-                </div>
-                <div className="statistic-item">
-                    <Knob
-                        value={20}
-                        readOnly
-                        valueColor={'#f06bac'}
-                        rangeColor={'SlateGray'}
-                    />
-                    <h4 className="statistic-label">{CATEGORY['Low Fat']}</h4>
-                </div>
-                <div className="statistic-item">
-                    <Knob
-                        value={40}
-                        readOnly
-                        valueColor={'#1da750'}
-                        rangeColor={'SlateGray'}
-                    />
-                    <h4 className="statistic-label">{CATEGORY.Vegan}</h4>
-                </div>
-                <div className="statistic-item">
-                    <Knob
-                        value={90}
-                        readOnly
-                        valueColor={'#3b82f6'}
-                        rangeColor={'SlateGray'}
-                    />
-                    <h4 className="statistic-label">
-                        {CATEGORY['Low Calorie']}
-                    </h4>
-                </div>
-            </div>
+        <div className="cart">
+            <ErrorBoundary>
+                <Statistics />
+            </ErrorBoundary>
             <div className="card">
                 <DataTable
                     value={products}
@@ -83,6 +54,7 @@ const Cart = () => {
                     <Column
                         field="category"
                         header="Category"
+                        body={categoryTemplate}
                         style={{ width: '20%' }}
                     />
                     <Column

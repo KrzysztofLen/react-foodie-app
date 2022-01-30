@@ -23,6 +23,7 @@ const devConfig = {
                 navigation: 'navigation@http://localhost:8081/remoteEntry.js',
                 list: 'list@http://localhost:8082/remoteEntry.js',
                 cookbook: 'cookbook@http://localhost:8083/remoteEntry.js',
+                cart: 'cart@http://localhost:8084/remoteEntry.js',
             },
             shared: {
                 ...deps,

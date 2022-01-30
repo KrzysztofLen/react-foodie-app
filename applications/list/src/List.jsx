@@ -24,7 +24,7 @@ const List = () => {
         if (layout === 'list') return <ListItem data={data} />;
         else if (layout === 'grid') return <GridItem data={data} />;
     };
-
+    // throw new Error('List crashed!');
     return (
         <div className="data">
             <div className="card">

@@ -17,7 +17,7 @@ const ListItem = ({ data }) => {
         <div className="col-12">
             <div className="product-list-item">
                 <img
-                    src={`images/product/${data.image}`}
+                    src={data.image}
                     onError={(e) =>
                         (e.target.src =
                             'https://www.primefaces.org/wp-content/uploads/2020/05/placeholder.png')

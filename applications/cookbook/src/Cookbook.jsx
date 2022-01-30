@@ -70,7 +70,7 @@ const Cookbook = () => {
     const nameTemplate = (item) => {
         return <h4>{item.name}</h4>;
     };
-
+    // throw new Error('Cookbook crashed'!);
     return (
         <div>
             <Panel header="Cookbook">

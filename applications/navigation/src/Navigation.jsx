@@ -6,7 +6,7 @@ import Search from './components/Search';
 import Logo from './components/Logo';
 
 const Navigation = ({ items }) => {
-    // throw Error('error');
+    // throw new Error('Navigation crashed!');
     return <Menubar model={items} start={<Logo />} end={<Search />} />;
 };
 

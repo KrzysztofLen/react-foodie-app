@@ -114,6 +114,7 @@
 
 .data .product-grid-item .product-grid-item-content {
     text-align: center;
+    height: 80%;
 }
 
 .data .product-grid-item .product-price {

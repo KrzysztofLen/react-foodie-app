@@ -29,7 +29,7 @@ const GridItem = ({ data }) => {
                 </div>
                 <div className="product-grid-item-content">
                     <img
-                        src={`images/product/${data.image}`}
+                        src={data.image}
                         onError={(e) =>
                             (e.target.src =
                                 'https://www.primefaces.org/wp-content/uploads/2020/05/placeholder.png')
