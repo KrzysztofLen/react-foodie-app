@@ -1,9 +1,9 @@
 import React from 'react';
 // throw new Error('Ooooopssss');
 export default () => (
-    <div className="footer-basic">
+    <div className="footer">
         <footer>
-            <div className="social">
+            <div className="footer-social">
                 <a href="#">
                     <i className="pi pi-instagram"></i>
                 </a>
@@ -22,7 +22,7 @@ export default () => (
                     <a href="#">Home</a>
                 </li>
                 <li className="list-inline-item">
-                    <a href="#">Services</a>
+                    <a href="#">Cookbook</a>
                 </li>
                 <li className="list-inline-item">
                     <a href="#">About</a>
@@ -34,7 +34,7 @@ export default () => (
                     <a href="#">Privacy Policy</a>
                 </li>
             </ul>
-            <p className="copyright">React foodie app © 2018</p>
+            <p className="copyright">React foodie app © 2022</p>
         </footer>
     </div>
 );
