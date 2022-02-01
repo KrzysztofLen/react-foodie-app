@@ -4,7 +4,7 @@ const commonConfig = require('./webpack.common');
 
 const deps = require('../package.json').dependencies;
 
-const PORT = 8083;
+const PORT = 8085;
 
 const devConfig = {
     mode: 'development',
@@ -17,10 +17,13 @@ const devConfig = {
     },
     plugins: [
         new ModuleFederationPlugin({
-            name: 'cookbook',
+            name: 'footer',
             filename: 'remoteEntry.js',
             exposes: {
-                './CookbookApp': './src/Cookbook',
+                './FooterApp': './src/Footer',
+            },
+            remotes: {
+                navigation: 'navigation@http://localhost:8081/remoteEntry.js',
             },
             shared: {
                 ...deps,

@@ -1,6 +1,5 @@
 const { merge } = require('webpack-merge');
-const HtmlWebpackPlugin = require('html-webpack-plugin');
-const ModuleFederationPlugin = require('webpack/lib/container/ModuleFederationPlugin');
+const { ModuleFederationPlugin } = require('webpack').container;
 const commonConfig = require('./webpack.common');
 
 const deps = require('../package.json').dependencies;
@@ -24,6 +23,7 @@ const devConfig = {
                 list: 'list@http://localhost:8082/remoteEntry.js',
                 cookbook: 'cookbook@http://localhost:8083/remoteEntry.js',
                 cart: 'cart@http://localhost:8084/remoteEntry.js',
+                footer: 'footer@http://localhost:8085/remoteEntry.js',
             },
             shared: {
                 ...deps,

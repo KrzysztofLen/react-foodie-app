@@ -1,5 +1,5 @@
 const { merge } = require('webpack-merge');
-const ModuleFederationPlugin = require('webpack/lib/container/ModuleFederationPlugin');
+const { ModuleFederationPlugin } = require('webpack').container;
 const commonConfig = require('./webpack.common');
 
 const deps = require('../package.json').dependencies;
@@ -21,6 +21,8 @@ const devConfig = {
             filename: 'remoteEntry.js',
             exposes: {
                 './NavigationApp': './src/Navigation',
+                './Logo': './src/components/Logo',
+                './Search': './src/components/Search',
             },
             shared: {
                 ...deps,

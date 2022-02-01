@@ -1,7 +1,5 @@
 import React from 'react';
-import { Router, Route, Switch, withRouter } from 'react-router-dom';
-
-import { createBrowserHistory } from 'history';
+import { Route, Switch, withRouter } from 'react-router-dom';
 
 import { ErrorBoundary } from './ErrorBoundary';
 
@@ -11,11 +9,13 @@ import FallbackNavigation from './components/FallbackNavigation';
 import FallbackList from './components/FallbackList';
 import FallbackCookbook from './components/FallbackCookbook';
 import FallbackCart from './components/FallbackCart';
+import FallbackFooter from './components/FallbackFooter';
 
 const NavigationLazy = React.lazy(() => import('navigation/NavigationApp'));
 const ListLazy = React.lazy(() => import('list/ListApp'));
 const CookbookLazy = React.lazy(() => import('cookbook/CookbookApp'));
 const CartLazy = React.lazy(() => import('cart/CartApp'));
+const FooterLazy = React.lazy(() => import('footer/FooterApp'));
 
 const App = ({ location }) => {
     return (
@@ -55,6 +55,12 @@ const App = ({ location }) => {
                     </ErrorBoundary>
                 </Route>
             </Switch>
+            <ErrorBoundary
+                error="Loading fallback footer"
+                loading="Loading footer"
+                fallback={<FallbackFooter />}>
+                <FooterLazy />
+            </ErrorBoundary>
         </>
     );
 };
