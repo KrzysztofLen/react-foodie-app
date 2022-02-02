@@ -19,7 +19,7 @@ const FooterLazy = React.lazy(() => import('footer/FooterApp'));
 
 const App = ({ location }) => {
     return (
-        <>
+        <React.StrictMode>
             <ErrorBoundary
                 error="Loading fallback navigation"
                 loading="Loading navigation"
@@ -61,7 +61,7 @@ const App = ({ location }) => {
                 fallback={<FallbackFooter />}>
                 <FooterLazy />
             </ErrorBoundary>
-        </>
+        </React.StrictMode>
     );
 };
 
