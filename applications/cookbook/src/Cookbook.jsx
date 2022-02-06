@@ -56,6 +56,10 @@ const Cookbook = () => {
         );
     };
 
+    const priceTemplate = (item) => {
+        return <span>${item.price}</span>;
+    };
+
     const nameTemplate = (item) => {
         return <h4>{item.name}</h4>;
     };
@@ -76,7 +80,6 @@ const Cookbook = () => {
             </Panel>
             <div className="card">
                 <DataTable value={products} responsiveLayout="scroll">
-                    <Column field="id" header="ID" />
                     <Column field="name" header="Name" body={nameTemplate} />
                     <Column
                         field="category"
@@ -88,6 +91,7 @@ const Cookbook = () => {
                         header="Review"
                         body={reviewTemplate}
                     />
+                    <Column field="price" header="Price" body={priceTemplate} />
                     <Column
                         field="rating"
                         header="Rating"
