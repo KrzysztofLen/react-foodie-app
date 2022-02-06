@@ -93,9 +93,9 @@
 }
 
 .data .product-list-item .product-price {
-    font-size: 1.5rem;
+    font-size: 0.8rem;
+    margin: 10px 0;
     font-weight: 600;
-    margin-bottom: 0.5rem;
     align-self: flex-end;
 }
 
@@ -137,8 +137,10 @@
 }
 
 .data .product-grid-item .product-price {
-    font-size: 1.5rem;
+    font-size: 0.8rem;
+    margin: 10px 0;
     font-weight: 600;
+    align-self: flex-end;
 }
 
 @media screen and (max-width: 576px) {

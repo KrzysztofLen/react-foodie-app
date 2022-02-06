@@ -4,6 +4,11 @@
     margin: 20px 200px;
 }
 
+.cart-footer-summary {
+    display: flex;
+    justify-content: space-between;
+}
+
 .cart .p-datatable.p-datatable-gridlines .p-datatable-tbody > tr > td {
     text-align: center;
 }

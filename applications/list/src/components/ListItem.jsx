@@ -18,9 +18,7 @@ const ListItem = ({ data }) => {
                 />
                 <div className="product-list-detail">
                     <div className="product-name">{data.name}</div>
-                    <div className="product-description">
-                        {data.description}
-                    </div>
+                    <div className="product-price">US$ {data.price}</div>
                     <Rating
                         value={data.rating}
                         readOnly

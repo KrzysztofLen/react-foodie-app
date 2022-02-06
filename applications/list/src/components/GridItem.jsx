@@ -28,9 +28,7 @@ const GridItem = ({ data }) => {
                         alt={data.name}
                     />
                     <div className="product-name">{data.name}</div>
-                    <div className="product-description">
-                        {data.description}
-                    </div>
+                    <div className="product-price">US$ {data.price}</div>
                     <div className="product-rating">
                         <Rating
                             value={data.rating}

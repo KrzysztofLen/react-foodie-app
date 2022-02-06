@@ -22,6 +22,24 @@ const Cart = () => {
     const categoryTemplate = (item) => {
         return <Tag className="mr-2">{item.category}</Tag>;
     };
+
+    const priceTemplate = (item) => {
+        return <span>${item.price}</span>;
+    };
+
+    const cartPriceSum = products.reduce((prev, cur) => prev + cur.price, 0);
+    console.log(cartPriceSum.toFixed(2));
+    const footer = () => (
+        <div className="cart-footer-summary">
+            <div>
+                {`In total there are ${
+                    products ? products.length : 0
+                } products.`}
+            </div>
+            <div>${cartPriceSum.toFixed(2)}</div>
+        </div>
+    );
+
     // throw new Error('Cart crashed!');
     return (
         <div className="cart">
@@ -34,6 +52,7 @@ const Cart = () => {
                     resizableColumns
                     columnResizeMode="fit"
                     showGridlines
+                    footer={footer}
                     responsiveLayout="scroll">
                     <Column
                         field="name"
@@ -54,6 +73,7 @@ const Cart = () => {
                     <Column
                         field="price"
                         header="Price"
+                        body={priceTemplate}
                         style={{ width: '20%' }}
                     />
                 </DataTable>
@@ -61,12 +81,11 @@ const Cart = () => {
 
             <Divider />
 
-            <div>
-                <h2>SUMMARY</h2>
-            </div>
-
             <div className="checkout">
-                <Button label="Proceed to checkout" icon="pi pi-check" />
+                <Button
+                    label={`Pay $${cartPriceSum.toFixed(2)}`}
+                    icon="pi pi-check"
+                />
             </div>
         </div>
     );
