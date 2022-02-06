@@ -8,7 +8,7 @@
     display: block;
     margin: 3px 0px 15px;
     font-size: 12px;
-    color: var(--bluegray-500)
+    color: var(--bluegray-500);
 }
 
 .p-dataview-list .p-grid {
@@ -40,6 +40,7 @@
 
 .data .product-description {
     margin: 0 0 1rem 0;
+    color: var(--bluegray-200);
 }
 
 .data .product-category-icon {
@@ -71,6 +72,24 @@
 
 .data .product-list-item .p-rating {
     margin: 0 0 0.5rem 0;
+}
+
+.p-rating .p-rating-icon {
+    color: var(--orange-500);
+}
+
+.p-selectbutton .p-button.p-highlight {
+    background: var(--orange-500);
+    border-color: var(--orange-500);
+}
+
+.p-selectbutton .p-button.p-highlight:hover {
+    background: var(--orange-500);
+    border-color: var(--orange-500);
+}
+
+.p-rating .p-rating-icon.pi-star-fill {
+    color: var(--orange-500);
 }
 
 .data .product-list-item .product-price {

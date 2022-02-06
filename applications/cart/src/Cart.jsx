@@ -20,18 +20,7 @@ const Cart = () => {
     }, []);
 
     const categoryTemplate = (item) => {
-        const category_type = {
-            Vegetarian: 'success',
-            Vegan: 'primary',
-            ['Low Carb']: 'info',
-            ['Low Fat']: 'danger',
-            ['Low Calorie']: 'warning',
-        }[item.category];
-        return (
-            <Tag className="mr-2" severity={`${category_type}`}>
-                {item.category}
-            </Tag>
-        );
+        return <Tag className="mr-2">{item.category}</Tag>;
     };
     // throw new Error('Cart crashed!');
     return (

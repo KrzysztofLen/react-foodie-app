@@ -27,18 +27,7 @@ const Cookbook = () => {
     };
 
     const categoryTemplate = (item) => {
-        const category_type = {
-            Vegetarian: 'success',
-            Vegan: 'primary',
-            ['Low Carb']: 'info',
-            ['Low Fat']: 'danger',
-            ['Low Calorie']: 'warning',
-        }[item.category];
-        return (
-            <Tag className="mr-2" severity={`${category_type}`}>
-                {item.category}
-            </Tag>
-        );
+        return <Tag className="mr-2">{item.category}</Tag>;
     };
 
     const onRemoveItem = (item) => {
@@ -54,7 +43,7 @@ const Cookbook = () => {
             <div className="cookbook-actions">
                 <Button
                     label="Add to Cart"
-                    className="p-button-outlined p-button-info p-button-sm"
+                    className="p-button-outlined p-button-sm"
                     icon="pi pi-shopping-cart"
                 />
                 <Button
