@@ -5,7 +5,7 @@ on:
       - main
       - 'mf/**'
     paths:
-      - "packages/applications/**"
+      - "applications/**"
 jobs:
   build:
     runs-on: ubuntu-18.04
