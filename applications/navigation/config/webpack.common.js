@@ -2,7 +2,7 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
     resolve: {
-        extensions: ['.jsx', '.js', '.json'],
+        extensions: ['.jsx', '.js', '.json', '.ts', '.tsx'],
     },
     module: {
         rules: [
@@ -18,14 +18,10 @@ module.exports = {
                 use: ['style-loader', 'css-loader'],
             },
             {
-                test: /\.(js|jsx)$/,
-                exclude: /node_modules/,
+                test: /\.(js|jsx|tsx|ts)$/,
+                exclude: /node_module/,
                 use: {
-                    loader: 'babel-loader',
-                    options: {
-                        presets: ['@babel/preset-react', '@babel/preset-env'],
-                        plugins: ['@babel/plugin-transform-runtime'],
-                    },
+                    loader: 'ts-loader',
                 },
             },
         ],

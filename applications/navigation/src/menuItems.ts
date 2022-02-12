@@ -1,4 +1,6 @@
-export const menuItems = [
+import { Item } from './types';
+
+export const menuItems: Item[] = [
     {
         label: 'List',
         icon: 'pi pi-fw pi-table',
