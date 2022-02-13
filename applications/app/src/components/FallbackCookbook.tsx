@@ -20,7 +20,7 @@ const FallbackCookbook = () => (
         <table>
             <thead>
                 <tr>
-                    <th colSpan="4">Fallback cookbook</th>
+                    <th colSpan={4}>Fallback cookbook</th>
                 </tr>
             </thead>
             <tbody>

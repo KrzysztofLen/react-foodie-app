@@ -1,5 +1,10 @@
 import React from 'react';
-import { Route, Switch, withRouter } from 'react-router-dom';
+import {
+    Route,
+    RouteComponentProps,
+    Switch,
+    withRouter,
+} from 'react-router-dom';
 
 import { ErrorBoundary } from './ErrorBoundary';
 
@@ -17,7 +22,7 @@ const CookbookLazy = React.lazy(() => import('cookbook/CookbookApp'));
 const CartLazy = React.lazy(() => import('cart/CartApp'));
 const FooterLazy = React.lazy(() => import('footer/FooterApp'));
 
-const App = ({ location }) => {
+const App = ({ location }: RouteComponentProps) => {
     return (
         <React.StrictMode>
             <ErrorBoundary

@@ -4,7 +4,7 @@ const FallbackList = () => (
     <table>
         <thead>
             <tr>
-                <th colSpan="4">Fallback table list</th>
+                <th colSpan={4}>Fallback table list</th>
             </tr>
         </thead>
         <tbody>

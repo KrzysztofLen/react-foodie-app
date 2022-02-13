@@ -1,7 +1,17 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-const renderLabel = (label, options) => {
+type Item = {
+    label: string;
+};
+
+type Options = {
+    className: string;
+    iconClassName: string;
+    labelClassName: string;
+};
+
+const renderLabel = (label: string, options: Options) => {
     return (
         <>
             <span className={options.iconClassName}></span>
@@ -14,7 +24,7 @@ export const routes = [
     {
         label: 'List',
         icon: 'pi pi-fw pi-table',
-        template: (item, options) => {
+        template: (item: Item, options: Options) => {
             return (
                 <Link to="/" className={options.className}>
                     {renderLabel(item.label, options)}
@@ -46,7 +56,7 @@ export const routes = [
     {
         label: 'Cookbook',
         icon: 'pi pi-fw pi-bookmark',
-        template: (item, options) => {
+        template: (item: Item, options: Options) => {
             return (
                 <Link to="/cookbook" className={options.className}>
                     {renderLabel(item.label, options)}
@@ -57,7 +67,7 @@ export const routes = [
     {
         label: 'Shopping list',
         icon: 'pi pi-fw pi-shopping-cart',
-        template: (item, options) => {
+        template: (item: Item, options: Options) => {
             return (
                 <Link to="/shopping-list" className={options.className}>
                     {renderLabel(item.label, options)}

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { SyntheticEvent } from 'react';
 
 const FallbackNavigation = () => (
     <nav>
@@ -7,8 +7,8 @@ const FallbackNavigation = () => (
                 <img
                     alt="logo"
                     src="showcase/images/logo.png"
-                    onError={(e) =>
-                        (e.target.src =
+                    onError={(e: SyntheticEvent<HTMLImageElement, Event>) =>
+                        (e.currentTarget.src =
                             'https://www.primefaces.org/wp-content/uploads/2020/05/placeholder.png')
                     }
                     height="40"
