@@ -1,0 +1,1 @@
+[{"filePath":"snackbar.tsx","name":"CustomizedSnackbars","description":"","properties":[{"name":"isOpen","description":"","required":true,"type":"boolean"}],"access":"public","methods":[],"args":[],"examples":[]}]

@@ -1,0 +1,16 @@
+[
+  {
+    "id": {
+      "scope": "krzysztoflen.react-foodie-app",
+      "name": "snackbar"
+    },
+    "head": "baea57fba722760b645828bb66176f01f34fdfe7"
+  },
+  {
+    "id": {
+      "scope": "krzysztoflen.react-foodie-app",
+      "name": "toggle"
+    },
+    "head": "032888ae7490153b9b5e94d388e4c67c0c077f66"
+  }
+]

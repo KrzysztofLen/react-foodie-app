@@ -1,0 +1,37 @@
+{
+  "components": [
+    {
+      "id": {
+        "scope": null,
+        "name": "snackbar"
+      },
+      "isSymlink": true,
+      "hash": "2e642905cfc3ef99ebf1133f7478beae109edff5"
+    },
+    {
+      "id": {
+        "scope": null,
+        "name": "toggle"
+      },
+      "isSymlink": true,
+      "hash": "f9c5942b1f55cb12b8f2b5fae21a9f1706f9d367"
+    },
+    {
+      "id": {
+        "scope": "krzysztoflen.react-foodie-app",
+        "name": "snackbar"
+      },
+      "isSymlink": false,
+      "hash": "6e695ce93e17a5792bfe6cd467cad2f3ddc5653d"
+    },
+    {
+      "id": {
+        "scope": "krzysztoflen.react-foodie-app",
+        "name": "toggle"
+      },
+      "isSymlink": false,
+      "hash": "7104b5041289775321be71d4eaf0437763cfa264"
+    }
+  ],
+  "lanes": []
+}
