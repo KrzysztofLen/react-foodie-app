@@ -9,17 +9,29 @@
  */
 
 {
+    "fallback-navigation": {
+        "scope": "krzysztoflen.react-foodie-app",
+        "version": "1.0.0",
+        "mainFile": "index.ts",
+        "rootDir": "react-foodie-app/fallback-navigation"
+    },
+    "footer": {
+        "scope": "krzysztoflen.react-foodie-app",
+        "version": "1.0.0",
+        "mainFile": "index.ts",
+        "rootDir": "react-foodie-app/footer"
+    },
     "snackbar": {
         "scope": "krzysztoflen.react-foodie-app",
-        "version": "0.0.1",
+        "version": "1.0.1",
         "mainFile": "index.ts",
-        "rootDir": "my-scope/snackbar"
+        "rootDir": "react-foodie-app/snackbar"
     },
     "toggle": {
         "scope": "krzysztoflen.react-foodie-app",
-        "version": "0.0.1",
+        "version": "1.0.2",
         "mainFile": "index.ts",
-        "rootDir": "my-scope/toggle"
+        "rootDir": "react-foodie-app/toggle"
     },
     "$schema-version": "14.9.0"
 }

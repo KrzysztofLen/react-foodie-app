@@ -6,6 +6,10 @@
     "build": "webpack --config config/webpack.prod.js"
   },
   "dependencies": {
+    "@emotion/react": "^11.8.1",
+    "@emotion/styled": "^11.8.1",
+    "@krzysztoflen/react-foodie-app.snackbar": "^0.0.1",
+    "@mui/material": "^5.4.2",
     "primeicons": "^5.0.0",
     "primereact": "^7.2.0",
     "react": "^17.0.1",

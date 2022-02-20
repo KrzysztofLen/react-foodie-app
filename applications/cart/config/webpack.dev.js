@@ -1,6 +1,7 @@
 const { merge } = require('webpack-merge');
 const { ModuleFederationPlugin } = require('webpack').container;
 const commonConfig = require('./webpack.common');
+const path = require('path');
 
 const deps = require('../package.json').dependencies;
 
@@ -13,6 +14,7 @@ const devConfig = {
     },
     devServer: {
         port: PORT,
+        contentBase: path.join(__dirname, 'dist'),
         historyApiFallback: true,
     },
     plugins: [

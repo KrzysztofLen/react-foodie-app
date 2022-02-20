@@ -6,6 +6,7 @@
     "build": "webpack --config config/webpack.prod.js"
   },
   "dependencies": {
+    "@krzysztoflen/react-foodie-app.toggle": "^1.0.1",
     "primeicons": "^5.0.0",
     "primereact": "^7.2.0",
     "react": "^17.0.1",

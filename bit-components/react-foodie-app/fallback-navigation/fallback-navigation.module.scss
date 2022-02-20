@@ -1,0 +1,20 @@
+header.navigation {
+    padding: 0.5rem;
+    background: #f8f9fa;
+    background-color: #f8f9fa;
+    border: 1px solid #dee2e6;
+    border-radius: 6px;
+}
+
+.navigation-link {
+    color: #495057;
+    text-decoration: none;
+
+    &-button {
+        &:hover {
+            .navigation-link {
+                color: #14b8a6;
+            }
+        }
+    }
+}

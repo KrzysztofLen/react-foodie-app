@@ -7,6 +7,8 @@ import { Button } from 'primereact/button';
 import { Panel } from 'primereact/panel';
 import { Chip } from 'primereact/chip';
 
+import { Toggle } from '@krzysztoflen/react-foodie-app.toggle';
+
 import { MOCK_DATA } from './data/products';
 
 import './style.css';
@@ -77,6 +79,7 @@ const Cookbook = () => {
                     occaecat cupidatat non proident, sunt in culpa qui officia
                     deserunt mollit anim id est laborum.
                 </p>
+                <Toggle />
             </Panel>
             <div className="card">
                 <DataTable value={products} responsiveLayout="scroll">

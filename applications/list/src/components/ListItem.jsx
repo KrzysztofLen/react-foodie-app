@@ -1,12 +1,23 @@
-import React from 'react';
+import React, { useState } from 'react';
 
 import { Rating } from 'primereact/rating';
 import { Button } from 'primereact/button';
 import { Tag } from 'primereact/tag';
 
+import { Snackbar } from '@krzysztoflen/react-foodie-app.snackbar';
+
 const ListItem = ({ data }) => {
+    const [isOpen, setIsOpen] = useState(false);
+
     return (
         <div className="col-12">
+            <Snackbar
+                isOpen={isOpen}
+                onClose={() => setIsOpen(false)}
+                variant={'info'}
+                message={`${data.name} added to cart!`}
+                style={{ boxShadow: 'none' }}
+            />
             <div className="product-list-item">
                 <img
                     src={data.image}
@@ -40,7 +51,9 @@ const ListItem = ({ data }) => {
                     </span>
                     <Button
                         icon="pi pi-shopping-cart"
-                        label="Add to Cart"></Button>
+                        label="Add to Cart"
+                        onClick={() => setIsOpen(true)}
+                    />
                 </div>
             </div>
         </div>

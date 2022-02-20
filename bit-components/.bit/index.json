@@ -18,11 +18,43 @@
     },
     {
       "id": {
+        "scope": null,
+        "name": "footer"
+      },
+      "isSymlink": true,
+      "hash": "d7eb6b340a11a367a1bec55e4a421d949214759f"
+    },
+    {
+      "id": {
+        "scope": null,
+        "name": "fallback-navigation"
+      },
+      "isSymlink": true,
+      "hash": "19ee97952d65c7c6f2f36d9ac54c4b5057a53c35"
+    },
+    {
+      "id": {
         "scope": "krzysztoflen.react-foodie-app",
         "name": "snackbar"
       },
       "isSymlink": false,
       "hash": "6e695ce93e17a5792bfe6cd467cad2f3ddc5653d"
+    },
+    {
+      "id": {
+        "scope": "krzysztoflen.react-foodie-app",
+        "name": "footer"
+      },
+      "isSymlink": false,
+      "hash": "f182245d3bae2c3098aae1c672500c309fc3e3c4"
+    },
+    {
+      "id": {
+        "scope": "krzysztoflen.react-foodie-app",
+        "name": "fallback-navigation"
+      },
+      "isSymlink": false,
+      "hash": "f7289b05dd41c0c143e021d85272d3f00da26dc3"
     },
     {
       "id": {

@@ -1,12 +1,23 @@
-import React from 'react';
+import React, { useState } from 'react';
 
 import { Rating } from 'primereact/rating';
 import { Button } from 'primereact/button';
 import { Tag } from 'primereact/tag';
 
+import { Snackbar } from '@krzysztoflen/react-foodie-app.snackbar';
+
 const GridItem = ({ data }) => {
+    const [isOpen, setIsOpen] = useState(false);
+
     return (
         <div className="col-12 md:col-4">
+            <Snackbar
+                isOpen={isOpen}
+                onClose={() => setIsOpen(false)}
+                variant={'info'}
+                message={`${data.name} added to cart!`}
+                style={{ boxShadow: 'none' }}
+            />
             <div className="product-grid-item card">
                 <div className="product-grid-item-top">
                     <Tag className="mr-2">{data.category}</Tag>
@@ -15,7 +26,7 @@ const GridItem = ({ data }) => {
                         style={{ color: 'var(--orange-500)' }}
                         icon="pi pi-heart"
                         className="p-button-rounded p-button-help p-button-outlined"
-                        onClick={() => console.log('click')}
+                        onClick={() => {}}
                     />
                 </div>
                 <div className="product-grid-item-content">
@@ -47,6 +58,7 @@ const GridItem = ({ data }) => {
                         icon="pi pi-shopping-cart"
                         label="Add to Cart"
                         disabled={data.inventoryStatus === 'OUTOFSTOCK'}
+                        onClick={() => setIsOpen(true)}
                     />
                 </div>
             </div>

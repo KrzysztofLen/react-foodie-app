@@ -4,13 +4,27 @@
       "scope": "krzysztoflen.react-foodie-app",
       "name": "snackbar"
     },
-    "head": "baea57fba722760b645828bb66176f01f34fdfe7"
+    "head": "19796800c5f252318facaf2c569b2f9b68b932be"
   },
   {
     "id": {
       "scope": "krzysztoflen.react-foodie-app",
       "name": "toggle"
     },
-    "head": "032888ae7490153b9b5e94d388e4c67c0c077f66"
+    "head": "30e74efc2c662c687ac7f79ba47c785755812133"
+  },
+  {
+    "id": {
+      "scope": "krzysztoflen.react-foodie-app",
+      "name": "footer"
+    },
+    "head": "a735c6544867b2c6cb2f973949b15d276b985182"
+  },
+  {
+    "id": {
+      "scope": "krzysztoflen.react-foodie-app",
+      "name": "fallback-navigation"
+    },
+    "head": "ff88daf64f0de629c1d6a46469e4e804e704f631"
   }
 ]
