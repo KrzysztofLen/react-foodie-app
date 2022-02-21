@@ -1,4 +1,4 @@
-name: CI
+name: Continous Integration footer
 on:
   push:
     branches:
