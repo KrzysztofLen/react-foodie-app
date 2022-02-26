@@ -2,9 +2,10 @@ import React, { ErrorInfo, ReactNode } from 'react';
 
 interface Props {
     children: ReactNode;
-    fallback: JSX.Element;
-    error: string;
+    errorFallback: JSX.Element;
+    loadingError: string;
     loading: string;
+    localErrorFallback?: JSX.Element;
 }
 
 interface State {
@@ -27,8 +28,8 @@ export class ErrorBoundary extends React.Component<Props, State> {
     public render() {
         if (this.state.hasError) {
             return (
-                <React.Suspense fallback={<div>{this.props.error}</div>}>
-                    {this.props.fallback}
+                <React.Suspense fallback={<div>{this.props.loadingError}</div>}>
+                    {this.props.errorFallback || this.props.localErrorFallback}
                 </React.Suspense>
             );
         }

@@ -1,0 +1,13 @@
+name: Continous Deployment cart
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - "applications/cart/**"
+defaults:
+  run:
+    working-directory: applications/cart
+jobs:
+  build:
+    runs-on: ubuntu-18.04

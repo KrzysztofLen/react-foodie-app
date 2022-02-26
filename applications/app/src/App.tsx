@@ -16,6 +16,8 @@ import FallbackCookbook from './components/FallbackCookbook';
 import FallbackCart from './components/FallbackCart';
 import FallbackFooter from './components/FallbackFooter';
 
+import { Footer as NPMFooter } from '@krzysztoflen/react-foodie-app.footer';
+
 const NavigationLazy = React.lazy(() => import('navigation/NavigationApp'));
 const ListLazy = React.lazy(() => import('list/ListApp'));
 const CookbookLazy = React.lazy(() => import('cookbook/CookbookApp'));
@@ -26,44 +28,55 @@ const App = ({ location }: RouteComponentProps) => {
     return (
         <React.StrictMode>
             <ErrorBoundary
-                error="Loading fallback navigation"
+                loadingError="Loading fallback navigation"
                 loading="Loading navigation"
-                fallback={<FallbackNavigation />}>
+                errorFallback={<FallbackNavigation />}>
                 <NavigationLazy items={routes} />
             </ErrorBoundary>
             <Switch>
                 <Route path="/" exact>
                     <ErrorBoundary
                         key={location.pathname}
-                        error="Loading fallback list"
+                        loadingError="Loading fallback list"
                         loading="Loading list"
-                        fallback={<FallbackList />}>
+                        errorFallback={<FallbackList />}>
                         <ListLazy />
                     </ErrorBoundary>
                 </Route>
                 <Route path="/cookbook">
                     <ErrorBoundary
                         key={location.pathname}
-                        error="Loading fallback cookbook"
+                        loadingError="Loading fallback cookbook"
                         loading="Loading cookbook"
-                        fallback={<FallbackCookbook />}>
+                        errorFallback={<FallbackCookbook />}>
                         <CookbookLazy />
                     </ErrorBoundary>
                 </Route>
                 <Route path="/shopping-list">
                     <ErrorBoundary
                         key={location.pathname}
-                        error="Loading fallback cart"
+                        loadingError="Loading fallback cart"
                         loading="Loading cart"
-                        fallback={<FallbackCart />}>
+                        errorFallback={<FallbackCart />}>
                         <CartLazy />
                     </ErrorBoundary>
                 </Route>
             </Switch>
             <ErrorBoundary
-                error="Loading fallback footer"
+                loadingError="Loading fallback footer"
                 loading="Loading footer"
-                fallback={<FallbackFooter />}>
+                errorFallback={
+                    <NPMFooter
+                        socials={[
+                            <span>Icon1</span>,
+                            <span>Icon2</span>,
+                            <span>Icon3</span>,
+                            <span>Icon4</span>,
+                            <span>Icon5</span>,
+                        ]}
+                    />
+                }
+                localErrorFallback={<FallbackFooter />}>
                 <FooterLazy />
             </ErrorBoundary>
         </React.StrictMode>

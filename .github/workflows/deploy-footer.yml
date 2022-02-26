@@ -1,0 +1,13 @@
+name: Continous Deployment footer
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - "applications/footer/**"
+defaults:
+  run:
+    working-directory: applications/footer
+jobs:
+  build:
+    runs-on: ubuntu-18.04

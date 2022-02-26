@@ -8,6 +8,7 @@
     "clean": "rm -rf dist"
   },
   "dependencies": {
+    "@krzysztoflen/react-foodie-app.footer": "^1.0.0",
     "primeicons": "^5.0.0",
     "primereact": "^7.2.0",
     "react": "^17.0.1",
