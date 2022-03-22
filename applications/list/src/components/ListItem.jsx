@@ -8,14 +8,24 @@ import { Snackbar } from '@krzysztoflen/react-foodie-app.snackbar';
 
 const ListItem = ({ data }) => {
     const [isOpen, setIsOpen] = useState(false);
+    const [variant, setVariant] = useState('');
+    const [message, setMessage] = useState('');
+
+    const handleClose = (reason) => {
+        if (reason === 'clickaway') {
+            return;
+        }
+
+        setIsOpen(false);
+    };
 
     return (
         <div className="col-12">
             <Snackbar
                 isOpen={isOpen}
-                onClose={() => setIsOpen(false)}
-                variant={'info'}
-                message={`${data.name} added to cart!`}
+                onClose={handleClose}
+                variant={variant}
+                message={message}
                 style={{ boxShadow: 'none' }}
             />
             <div className="product-list-item">
@@ -41,7 +51,11 @@ const ListItem = ({ data }) => {
                         style={{ color: 'var(--orange-500)' }}
                         icon="pi pi-heart"
                         className="p-button-rounded p-button-help p-button-outlined"
-                        onClick={() => console.log('click')}
+                        onClick={() => {
+                            setIsOpen(true);
+                            setVariant('success');
+                            setMessage(`${data.name} added to your cookbook!`);
+                        }}
                     />
                     <span className="product-reviews">
                         <span className="product-reviews-number">
@@ -52,7 +66,11 @@ const ListItem = ({ data }) => {
                     <Button
                         icon="pi pi-shopping-cart"
                         label="Add to Cart"
-                        onClick={() => setIsOpen(true)}
+                        onClick={() => {
+                            setIsOpen(true);
+                            setVariant('info');
+                            setMessage(`${data.name} added to cart!`);
+                        }}
                     />
                 </div>
             </div>

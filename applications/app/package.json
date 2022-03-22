@@ -8,6 +8,7 @@
     "clean": "rm -rf dist"
   },
   "dependencies": {
+    "@krzysztoflen/react-foodie-app.fallback-navigation": "^1.0.0",
     "@krzysztoflen/react-foodie-app.footer": "^1.0.0",
     "react": "^17.0.1",
     "react-dom": "^17.0.1",

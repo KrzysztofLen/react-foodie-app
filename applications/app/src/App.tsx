@@ -17,6 +17,7 @@ import FallbackCart from './components/FallbackCart';
 import FallbackFooter from './components/FallbackFooter';
 
 import { Footer as NPMFooter } from '@krzysztoflen/react-foodie-app.footer';
+import { FallbackNavigation as NPMFallbackNavigation } from '@krzysztoflen/react-foodie-app.fallback-navigation';
 
 const NavigationLazy = React.lazy(() => import('navigation/NavigationApp'));
 const ListLazy = React.lazy(() => import('list/ListApp'));
@@ -30,7 +31,25 @@ const App = ({ location }: RouteComponentProps) => {
             <ErrorBoundary
                 loadingError="Loading fallback navigation"
                 loading="Loading navigation"
-                errorFallback={<FallbackNavigation />}>
+                errorFallback={
+                    <NPMFallbackNavigation
+                        pages={[
+                            {
+                                label: 'List',
+                                url: '/',
+                            },
+                            {
+                                label: 'Cookbook',
+                                url: '/cookbook',
+                            },
+                            {
+                                label: 'Shopping List',
+                                url: '/shopping-list',
+                            },
+                        ]}
+                    />
+                }
+                localErrorFallback={<FallbackNavigation />}>
                 <NavigationLazy items={routes} />
             </ErrorBoundary>
             <Switch>
